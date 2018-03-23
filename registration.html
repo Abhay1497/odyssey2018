@@ -7,40 +7,46 @@
 </head>
 <body>
 	<div class="container">
-<form>
+<form action="reg.php" method="post">
   <fieldset>
     <legend align="center">Registration</legend>
    
    <div class="form-group zoom">
-      <label><b>Name</b></label>
-      <input type="text" class="form-control" placeholder="Enter your full name">
-    </div>	
-
-    <div class="form-group zoom">
-      <label>Email address</label>
-      <input type="email" class="form-control" placeholder="Enter email">
-    </div>
-
-    <div class="form-group zoom">
-      <label><b>Contact No.</b></label>
-      <input type="text" maxlength="10" class="form-control" placeholder="Enter your Contact No.">
-    </div>
-
-<div class="form-group zoom">
-      <label><b>College Name</b></label>
-      <input type="text" class="form-control" placeholder="Enter College name with city">
-    </div>
-
-    <div class="form-group zoom">
       <label>Events</label>
-      <select class="form-control">
-        <option>1</option>
-        <option>2</option>
+      <select class="form-control" name="event">
+        <option value="CS01">CS01 - CODEZILLA</option>
+        <option value="CS02">CS02 - LAN GAMMING</option>
         <option>3</option>
         <option>4</option>
         <option>5</option>
       </select>
     </div>
+
+   <div class="form-group zoom">
+      <label><b>Name</b></label>
+      <input name="name" type="text" class="form-control" placeholder="Leader Name for group event">
+    </div>	
+
+    <div class="form-group zoom">
+      <label>Email address</label>
+      <input name="email" type="email" class="form-control" placeholder="Enter email">
+    </div>
+
+    <div class="form-group zoom">
+      <label><b>Contact No.</b></label>
+      <input name="mobile" type="text" maxlength="10" class="form-control" placeholder="Enter your Contact No.">
+    </div>
+
+<div class="form-group zoom">
+      <label><b>College Name</b></label>
+      <input name="coll" type="text" class="form-control" placeholder="Enter College name with city">
+    </div>
+
+ <div class="form-group zoom">
+      <label><b>Group Members</b></label>
+      <textarea name="members" rows="3" class="form-control" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter group member names (if any) seperated by commas"></textarea>
+    </div>
+    
 <center><button class="btn btn-primary"><b>SUBMIT</b></button></center>
 
 
