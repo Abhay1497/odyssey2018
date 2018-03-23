@@ -1,8 +1,3 @@
-.container{
-	padding-left: 150px;
-	padding-right: 150px;
-}
-
 .zoom {
     transform: scale(0.8);
     /*margin-bottom: 7rem;*/
@@ -19,7 +14,7 @@
     transform: scale(1);
 }
 
-label,legend{
+label{
 	color: white;
 	font-family: showcard gothic;
 	font-size: 20px;
@@ -29,4 +24,16 @@ label,legend{
 .zoom > input,.zoom > select,.zoom > textarea{
     border-radius: 50px;
     text-align: center;
+}
+
+.zoom > input,.zoom > select{
+    height: 50px;
+}
+
+.row .zoom{
+    margin-top: 100px;
+}
+
+body{
+    background-color: black;
 }
