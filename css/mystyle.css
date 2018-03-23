@@ -26,6 +26,7 @@ label,legend{
 	font-stretch: expanded;
 }
 
-.zoom > input,.zoom > select{
+.zoom > input,.zoom > select,.zoom > textarea{
     border-radius: 50px;
+    text-align: center;
 }
