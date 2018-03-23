@@ -47,8 +47,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Please enter a valid information into respective fields.";
         }else{
             $sql = "insert into registration (event_id,mobile,name,college,email,member_names) values('$event_id','$mobile','$name','$college','$email','$members_names')";
-            $result = mysqli_query($conn, $sql);
-            echo "Registered Successfully";
+            if(mysqli_query($conn, $sql)==1) {
+                echo "<br>Registered Successfully";
+            }
+            else{
+                echo "<br>You have already registered for this event.";
+            }
         }
     } else {
         echo "Sorry for inconvience, please try again later.";
