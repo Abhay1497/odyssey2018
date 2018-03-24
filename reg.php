@@ -23,8 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = $_POST['email'];
 //        echo $email;
     }
-
-    if (!empty($_POST['mobile'])) {
+    $string_exp = "/^[0-9]+$/";
+    if (!empty($_POST['mobile']) and preg_match($string_exp,$_POST['mobile'])) {
         $mobile = $_POST['mobile'];
 //        echo $mobile;
     }
@@ -42,7 +42,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn = mysqli_connect("localhost", "root", "", "odyssey18");
 
     if ($conn) {
-        echo "successfull";
         if ($name == "" and $mobile == "" and $email == "" and $college == "" and $members_names == "") {
             echo "Please enter a valid information into respective fields.";
         }else{

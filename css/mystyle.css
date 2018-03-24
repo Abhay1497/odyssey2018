@@ -1,7 +1,7 @@
 .zoom {
     transform: scale(0.8);
     /*margin-bottom: 7rem;*/
-    opacity: 0.5;
+    opacity: 0.7;
     transition: 0.5s ease all;
     width: 100%;
     display: flex;
@@ -15,7 +15,7 @@
 }
 
 label{
-	color: white;
+	color: black;
 	font-family: showcard gothic;
 	font-size: 20px;
 	font-stretch: expanded;
@@ -35,5 +35,9 @@ label{
 }
 
 body{
-    background-color: black;
+    background-color: #14eeff;
+}
+
+small{
+    color: black;
 }
