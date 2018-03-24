@@ -44,24 +44,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conn) {
         if ($name == "" and $mobile == "" and $email == "" and $college == "" and $members_names == "") {
             echo "Please enter a valid information into respective fields.";
-        }else{
+        } else {
             $sql = "insert into registration (event_id,mobile,name,college,email,member_names) values('$event_id','$mobile','$name','$college','$email','$members_names')";
-            if(mysqli_query($conn, $sql)==1){
+            if (mysqli_query($conn, $sql) == 1) {
+                ?>
 
-                    <script language = "javascript" type = "text/javascript" >
-                        alert('Name Field is Empty.');
-//        window . location = 'reg';
-    </script >
-        }
-            }
-            else{
-                echo "<br>You have already registered for this event.";
+                <script language="javascript" type="text/javascript">
+                    alert('Name Field is Empty.');
+                    //        window . location = 'reg';
+                </script><?php
             }
         }
     } else {
-        echo "Sorry for inconvience, please try again later.";
+        echo "<br>You have already registered for this event.";
     }
-    $conn->close();
-
+} else {
+    echo "Sorry for inconvience, please try again later.";
 }
+$conn->close();
+
+
 ?>
