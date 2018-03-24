@@ -16,9 +16,10 @@
 
 label{
 	color: black;
-	font-family: showcard gothic;
+	font-family: Calibri;
 	font-size: 20px;
 	font-stretch: expanded;
+    font-weight: bolder;
 }
 
 .zoom > input,.zoom > select,.zoom > textarea{
@@ -31,7 +32,7 @@ label{
 }
 
 .row .zoom{
-    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 body{
@@ -40,4 +41,8 @@ body{
 
 small{
     color: black;
+}
+
+h1{
+    margin: 30px auto;
 }

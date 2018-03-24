@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //        echo $email;
     }
     $string_exp = "/^[0-9]+$/";
-    if (!empty($_POST['mobile']) and preg_match($string_exp,$_POST['mobile'])) {
+    if (!empty($_POST['mobile'])) {
         $mobile = $_POST['mobile'];
 //        echo $mobile;
     }
@@ -46,8 +46,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Please enter a valid information into respective fields.";
         }else{
             $sql = "insert into registration (event_id,mobile,name,college,email,member_names) values('$event_id','$mobile','$name','$college','$email','$members_names')";
-            if(mysqli_query($conn, $sql)==1) {
-                echo "<br>Registered Successfully";
+            if(mysqli_query($conn, $sql)==1){
+
+                    <script language = "javascript" type = "text/javascript" >
+                        alert('Name Field is Empty.');
+//        window . location = 'reg';
+    </script >
+        }
             }
             else{
                 echo "<br>You have already registered for this event.";
