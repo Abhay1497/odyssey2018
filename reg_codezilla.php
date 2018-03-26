@@ -5,7 +5,7 @@
  * Date: 23-03-2018
  * Time: 06:00 PM
  */
-$event_id = $name = $email = $mobile = $college = $members_names = "";
+$event_id = $name = $email = $mobile = $college = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -27,9 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $college = $_POST['college'];
     }
 
-    if (!empty($_POST['members'])) {
-        $members_names = $_POST['members'];
-    }
 
     $conn = mysqli_connect("localhost", "root", "", "odyssey18");
 
