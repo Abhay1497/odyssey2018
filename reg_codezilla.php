@@ -42,20 +42,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         {
             $id=$row['max(part_id)'];
             $id=$id+1;
-            //$id1="$id";
-            //echo $id="ODCS-".$id1;
-            //echo $id="ODCS01-$id1";
 
         }
         $event_id=$event_id.$id;
         $sql = "insert into codezilla values('$name','$mobile','$email','$college','$id')";
         if (mysqli_query($conn, $sql) == 1) {
+
             //sending email
-//            $email_subject = "Website Contact Form:  $name";
-//            $email_body = "You have received a new message from your website contact form.\n\n" . "Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nMessage:\n$message";
-//            $headers = "From: noreply@yourdomain.com\n";
-//            $headers .= "Reply-To: $email_address";
-//            mail($email, $email_subject, $email_body, $headers);
+            $email_subject = "ODYSSEY Registration";
+            $email_body = "Thank you for registering in Codezilla.\nYour Participation ID is ".$event_id;
+            mail($email, $email_subject, $email_body);
+
+            //sending sms
+            include('way2sms-api.php');
+            sendWay2SMS ( "8197508688","R3694K",$mobile,$email_body);
+
             ?>
             <script language="javascript" type="text/javascript">
                 alert('Registered successfully.Your ID is <?php echo $event_id;?>');
