@@ -2,12 +2,12 @@
 /**
  * Created by PhpStorm.
  * User: Vivek
- * Date: 26-03-2018
- * Time: 03:17 PM
+ * Date: 27-03-2018
+ * Time: 12:58 PM
  */
 
-$name1 = $email1 = $mobile1 = $name2 = $email2 = $mobile2 = $college = "";
-$event_id = "ODEC01-";
+$name1 = $email1 = $mobile1 = $name2 = $email2 = $mobile2 = $name3 = $email3 = $mobile3 = $name4 = $email4 = $mobile4 = $college = "";
+$event_id = "ODME021-";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
@@ -34,6 +34,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST['mobile2'])) {
         $mobile2 = $_POST['mobile2'];
     }
+    if (!empty($_POST['name3'])) {
+        $name3 = $_POST['name3'];
+    }
+
+    if (!empty($_POST['email3'])) {
+        $email3 = $_POST['email3'];
+    }
+
+    if (!empty($_POST['mobile3'])) {
+        $mobile3 = $_POST['mobile3'];
+    }
+    if (!empty($_POST['name4'])) {
+        $name4 = $_POST['name4'];
+    }
+
+    if (!empty($_POST['email4'])) {
+        $email4 = $_POST['email4'];
+    }
+
+    if (!empty($_POST['mobile4'])) {
+        $mobile4 = $_POST['mobile4'];
+    }
 
     if (!empty($_POST['college'])) {
         $college = $_POST['college'];
@@ -44,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn) {
 
-        $sql = "SELECT max(part_id) FROM robosoccer";
+        $sql = "SELECT max(part_id) FROM royalfiesta";
         $retval = mysqli_query($conn, $sql);
         if(!$retval)
         {
@@ -55,36 +77,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         {
             $id=$row['max(part_id)'];
             $id=$id+1;
+            //$id1="$id";
+            //echo $id="ODCS-".$id1;
+            //echo $id="ODCS01-$id1";
 
         }
         $event_id=$event_id.$id;
-        $sql = "insert into robosoccer values('$name1','$mobile1','$email1','$name2','$mobile2','$email2','$college','$id')";
+        $sql = "insert into royalfiesta values('$name1','$mobile1','$email1','$name2','$mobile2','$email2','$name3','$mobile3','$email3','$name4','$mobile4','$email4','$college','$id')";
         if (mysqli_query($conn, $sql) == 1) {
 
             //sending email
 //            $email_subject = "ODYSSEY Registration";
-//            $email_body = "Thank you for registering in Robo-Soccer.\nYour Participation ID is ".$event_id;
+//            $email_body = "Thank you for registering in LAN Gaming (CS).\nYour Participation ID is ".$event_id;
 //            mail($email1, $email_subject, $email_body);
 //            mail($email2, $email_subject, $email_body);
+//            mail($email3, $email_subject, $email_body);
+//            mail($email4, $email_subject, $email_body);
 
             //sending sms
 //            include('way2sms-api.php');
 //            sendWay2SMS ( "8197508688","R3694K",$mobile1,$email_body);
 //            sendWay2SMS ( "8197508688","R3694K",$mobile2,$email_body);
+//            sendWay2SMS ( "8197508688","R3694K",$mobile3,$email_body);
+//            sendWay2SMS ( "8197508688","R3694K",$mobile4,$email_body);
 
             ?>
             <script language="javascript" type="text/javascript">
                 alert('Registered successfully.Your ID is <?php echo $event_id;?>');
-                window.location = "reg_robosoccer.html";
+                window.location = "reg_royalfiesta.html";
             </script>
             <?php
         } else {
             ?>
             <script language="javascript" type="text/javascript">
-                alert('You have already registered for this event.');
-                window.location = "reg_robosoccer.html";
+                alert('You have already registered to this event.');
+                window.location = "reg_royalfiesta.html";
             </script>
-        <?php        }
+            <?php
+        }
     }
 } else {
     echo "Sorry for inconvience, please try again later.";

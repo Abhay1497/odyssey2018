@@ -2,12 +2,12 @@
 /**
  * Created by PhpStorm.
  * User: Vivek
- * Date: 26-03-2018
- * Time: 03:55 PM
+ * Date: 27-03-2018
+ * Time: 12:49 PM
  */
 
-$name = $email = $mobile = $college = "";
-$event_id = "ODCS022-";
+$name = $email = $mobile = $college =$teammembers= "";
+$event_id = "ODMB01-";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
@@ -23,15 +23,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mobile = $_POST['mobile'];
     }
 
+    if (!empty($_POST['teammembers'])) {
+        $teammembers = $_POST['teammembers'];
+    }
+
     if (!empty($_POST['college'])) {
         $college = $_POST['college'];
     }
 
-include 'connection.php';
+
+    include 'connection.php';
 
     if ($conn) {
 
-        $sql = "SELECT max(part_id) FROM langamingnfs";
+        $sql = "SELECT max(part_id) FROM mixedcricket";
         $retval = mysqli_query($conn, $sql);
         if(!$retval)
         {
@@ -44,13 +49,15 @@ include 'connection.php';
             $id=$id+1;
 
         }
+
         $event_id=$event_id.$id;
-        $sql = "insert into langamingnfs values('$name','$mobile','$email','$college','$id')";
+
+        $sql = "insert into mixedcricket values('$name','$mobile','$email','$teammembers','$college','$id')";
         if (mysqli_query($conn, $sql) == 1) {
 
-            //sending email
+//            //sending email
 //            $email_subject = "ODYSSEY Registration";
-//            $email_body = "Thank you for registering in LAN Gaming(NFS).\nYour Participation ID is ".$event_id;
+//            $email_body = "Thank you for registering in Group Dance.\nYour Participation ID is ".$event_id;
 //            mail($email, $email_subject, $email_body);
 
             //sending sms
@@ -60,15 +67,15 @@ include 'connection.php';
             ?>
             <script language="javascript" type="text/javascript">
                 alert('Registered successfully.Your ID is <?php echo $event_id;?>');
-                window.location = "reg_langamingnfs.html";
+                window.location = "reg_mixedcricket.html";
             </script>
             <?php
 
         } else {
             ?>
             <script language="javascript" type="text/javascript">
-                alert('You have already registered for this event.');
-                window.location = "reg_langamingnfs.html";
+                alert('You have already registered to this event.');
+                window.location = "reg_mixedcricket.html";
             </script>
             <?php
         }
@@ -76,6 +83,6 @@ include 'connection.php';
 } else {
     echo "Sorry for inconvience, please try again later.";
 }
-$conn->close();
 
+$conn->close();
 ?>

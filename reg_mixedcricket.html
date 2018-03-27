@@ -2,19 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>LAN Gaming(NFS) Registration</title>
+    <title>MIxed Cricket Registration</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/mystyle.css">
 </head>
 <body>
 <div class="container">
     <div class="row">
-        <h1>LAN Gaming Registration</h1>
+        <h1>Mixed Cricket Registration</h1>
     </div>
-    <div class="row">
-        <h3>Need For Speed: Most Wanted</h3>
-    </div>
-    <form action="reg_langamingnfs.php" method="post">
+    <form action="reg_mixedcricket.php" method="post">
         <div class="row">
             <div class="zoom">
                 <label>Name</label>
@@ -39,12 +36,22 @@
 
         <div class="row">
             <div class="zoom">
+                <label>Team Members</label>
+                <textarea name="teammembers" class="form-control" cols="30" rows="10"
+                          placeholder="Enter names seperated by commas." required></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="zoom">
                 <label>College Name</label>
-                <input name="college" type="text" class="form-control" placeholder="Enter College name with city" required>
+                <input name="college" type="text" class="form-control" placeholder="Enter College name with city"
+                       required>
             </div>
         </div>
         <center>
-            <button class="btn btn-primary" style="margin-bottom: 100px;margin-top:25px;width: 25%"><b>SUBMIT</b></button>
+            <button class="btn btn-primary" style="margin-bottom: 100px;margin-top:25px;width: 25%"><b>SUBMIT</b>
+            </button>
         </center>
     </form>
 </div>

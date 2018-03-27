@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2018 at 03:44 PM
+-- Generation Time: Mar 27, 2018 at 09:40 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -41,9 +41,7 @@ CREATE TABLE `codezilla` (
 --
 
 INSERT INTO `codezilla` (`name`, `mobile`, `email`, `college`, `part_id`) VALUES
-('gttrgr', '3546846546', 'alnsda@adksj.com', 'werwe', 301),
-('dgdfgs', '9876543210', 'alnsda@adksj.com', 'werwe', 1),
-('gttrgr', '9876543210', 'hello@gmail.com', 'werwe', 300);
+('dummy', 'dummy', 'dummy', 'dummy', 333);
 
 --
 -- Indexes for dumped tables
