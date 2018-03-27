@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-    $conn = mysqli_connect("localhost", "root", "", "odyssey2k18");
+    include 'connection.php';
 
     if ($conn) {
 

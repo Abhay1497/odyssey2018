@@ -27,8 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $college = $_POST['college'];
     }
 
-
-    $conn = mysqli_connect("localhost", "root", "", "odyssey2k18");
+include 'connection.php';
 
     if ($conn) {
 
