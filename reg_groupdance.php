@@ -2,11 +2,12 @@
 /**
  * Created by PhpStorm.
  * User: Vivek
- * Date: 23-03-2018
- * Time: 06:00 PM
+ * Date: 27-03-2018
+ * Time: 12:21 PM
  */
-$name = $email = $mobile = $college = "";
-$event_id = "ODCS01-";
+
+$name = $email = $mobile = $college =$teammembers= "";
+$event_id = "ODFS01-";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
@@ -22,6 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mobile = $_POST['mobile'];
     }
 
+    if (!empty($_POST['teammembers'])) {
+        $teammembers = $_POST['teammembers'];
+    }
+
     if (!empty($_POST['college'])) {
         $college = $_POST['college'];
     }
@@ -31,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn) {
 
-        $sql = "SELECT max(part_id) FROM codezilla";
+        $sql = "SELECT max(part_id) FROM groupdance";
         $retval = mysqli_query($conn, $sql);
         if(!$retval)
         {
@@ -47,12 +52,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $event_id=$event_id.$id;
 
-        $sql = "insert into codezilla values('$name','$mobile','$email','$college','$id')";
+        $sql = "insert into groupdance values('$name','$mobile','$email','$teammembers','$college','$id')";
         if (mysqli_query($conn, $sql) == 1) {
 
 //            //sending email
 //            $email_subject = "ODYSSEY Registration";
-//            $email_body = "Thank you for registering in Codezilla.\nYour Participation ID is ".$event_id;
+//            $email_body = "Thank you for registering in Group Dance.\nYour Participation ID is ".$event_id;
 //            mail($email, $email_subject, $email_body);
 
             //sending sms
@@ -62,15 +67,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ?>
             <script language="javascript" type="text/javascript">
                 alert('Registered successfully.Your ID is <?php echo $event_id;?>');
-                window.location = "reg_codezilla.html";
+                window.location = "reg_groupdance.html";
             </script>
             <?php
-            $conn->close();
+
         } else {
             ?>
             <script language="javascript" type="text/javascript">
                 alert('You have already registered to this event.');
-                window.location = "reg_codezilla.html";
+                window.location = "reg_groupdance.html";
             </script>
             <?php
         }
@@ -79,5 +84,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Sorry for inconvience, please try again later.";
 }
 
-
+$conn->close();
 ?>
