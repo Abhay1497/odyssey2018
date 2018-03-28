@@ -72,10 +72,10 @@ include 'connection.php';
             </script>
             <?php
         }
+    } else {
+        echo "Sorry for inconvience, please try again later.";
     }
-} else {
-    echo "Sorry for inconvience, please try again later.";
+    $conn->close();
 }
-$conn->close();
 
 ?>

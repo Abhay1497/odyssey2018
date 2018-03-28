@@ -6,7 +6,7 @@
  * Time: 03:07 PM
  */
 
-$name = $email = $mobile = $college =$teammembers= "";
+$name = $email = $mobile = $college = $teammembers = "";
 $event_id = "ODCLUB01-";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -38,19 +38,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $sql = "SELECT max(part_id) FROM unplulugedband";
         $retval = mysqli_query($conn, $sql);
-        if(!$retval)
-        {
-            die('could not get data:'.mysqli_error());
+        if (!$retval) {
+            die('could not get data:' . mysqli_error());
         }
 
-        while($row=mysqli_fetch_array($retval,MYSQLI_ASSOC))
-        {
-            $id=$row['max(part_id)'];
-            $id=$id+1;
+        while ($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
+            $id = $row['max(part_id)'];
+            $id = $id + 1;
 
         }
 
-        $event_id=$event_id.$id;
+        $event_id = $event_id . $id;
 
         $sql = "insert into unplulugedband values('$name','$mobile','$email','$teammembers','$college','$id')";
         if (mysqli_query($conn, $sql) == 1) {
@@ -78,11 +76,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 window.location = "reg_unplugedband.html";
             </script>
             <?php
+            $conn->close();
         }
+    } else {
+        echo "Sorry for inconvience, please try again later.";
     }
-} else {
-    echo "Sorry for inconvience, please try again later.";
-}
 
-$conn->close();
+
+}
 ?>
