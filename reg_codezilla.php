@@ -5,21 +5,34 @@
  * Date: 23-03-2018
  * Time: 06:00 PM
  */
-$name = $email = $mobile = $college = "";
+
+$name1 = $email1 = $mobile1 = $name2 = $email2 = $mobile2 =  $college = "";
 $event_id = "ODCS01-";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
-    if (!empty($_POST['name'])) {
-        $name = $_POST['name'];
+    if (!empty($_POST['name1'])) {
+        $name1 = $_POST['name1'];
     }
 
-    if (!empty($_POST['email'])) {
-        $email = $_POST['email'];
+    if (!empty($_POST['email1'])) {
+        $email1 = $_POST['email1'];
     }
 
-    if (!empty($_POST['mobile'])) {
-        $mobile = $_POST['mobile'];
+    if (!empty($_POST['mobile1'])) {
+        $mobile1 = $_POST['mobile1'];
+    }
+
+    if (!empty($_POST['name2'])) {
+        $name2 = $_POST['name2'];
+    }
+
+    if (!empty($_POST['email2'])) {
+        $email2 = $_POST['email2'];
+    }
+
+    if (!empty($_POST['mobile2'])) {
+        $mobile2 = $_POST['mobile2'];
     }
 
     if (!empty($_POST['college'])) {
@@ -42,22 +55,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         {
             $id=$row['max(part_id)'];
             $id=$id+1;
+            //$id1="$id";
+            //echo $id="ODCS-".$id1;
+            //echo $id="ODCS01-$id1";
 
         }
-
         $event_id=$event_id.$id;
-
-        $sql = "insert into codezilla values('$name','$mobile','$email','$college','$id')";
+        $sql = "insert into codezilla values('$name1','$mobile1','$email1','$name2','$mobile2','$email2','$college','$id')";
         if (mysqli_query($conn, $sql) == 1) {
 
-//            //sending email
+            //sending email
 //            $email_subject = "ODYSSEY Registration";
-//            $email_body = "Thank you for registering in Codezilla.\nYour Participation ID is ".$event_id;
-//            mail($email, $email_subject, $email_body);
+//            $email_body = "Thank you for registering in Mad Race.\nYour Participation ID is ".$event_id;
+//            mail($email1, $email_subject, $email_body);
+//            mail($email2, $email_subject, $email_body);
 
             //sending sms
 //            include('way2sms-api.php');
-//            sendWay2SMS ( "8197508688","R3694K",$mobile,$email_body);
+//            sendWay2SMS ( "8197508688","R3694K",$mobile1,$email_body);
+//            sendWay2SMS ( "8197508688","R3694K",$mobile2,$email_body);
 
             ?>
             <script language="javascript" type="text/javascript">
@@ -65,7 +81,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 window.location = "reg_codezilla.html";
             </script>
             <?php
-            $conn->close();
         } else {
             ?>
             <script language="javascript" type="text/javascript">
@@ -79,5 +94,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Sorry for inconvience, please try again later.";
 }
 
+$conn->close();
 
-?>
+?>?>
