@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ?>
             <script language="javascript" type="text/javascript">
                 alert('Registered successfully.Your ID is <?php echo $event_id;?>');
-                window.location = "reg_mixedcricket.html";
+                window.location = "reg_mixedcricket_verify.php";
             </script>
             <?php
 
@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ?>
             <script language="javascript" type="text/javascript">
                 alert('You have already registered to this event.');
-                window.location = "reg_mixedcricket.html";
+                window.location = "reg_mixedcricket_verify.php";
             </script>
             <?php
         }
