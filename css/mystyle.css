@@ -49,3 +49,14 @@ h3{
 h4{
     margin-top: 10px;
 }
+
+.justify-content-center > a > button{
+    margin: 20px;
+    height: 100px;
+    width: 230px;
+    font-size: larger;
+
+}
+.text-center > h3{
+    margin-top: 20px;
+}
