@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn) {
 
-        $sql = "SELECT max(part_id) FROM unplulugedband";
+        $sql = "SELECT max(part_id) FROM unplugedband";
         $retval = mysqli_query($conn, $sql);
         if (!$retval) {
             die('could not get data:' . mysqli_error());
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $event_id = $event_id . $id;
 
-        $sql = "insert into unplulugedband values('$name','$mobile','$email','$teammembers','$college','$id')";
+        $sql = "insert into unplugedband values('$name','$mobile','$email','$teammembers','$college','$id')";
         if (mysqli_query($conn, $sql) == 1) {
 
 //            //sending email
