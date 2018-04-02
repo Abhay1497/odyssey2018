@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ?>
             <script language="javascript" type="text/javascript">
                 alert('Registered successfully.Your ID is <?php echo $event_id;?>');
-                window.location = "reg_fashionshow.html";
+                window.location = "jainbgm.in/odyssey18";
             </script>
             <?php
 
@@ -75,12 +75,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ?>
             <script language="javascript" type="text/javascript">
                 alert('You have already registered to this event.');
-                window.location = "reg_fashionshow.html";
+                window.location = "jainbgm.in/odyssey18";
             </script>
             <?php
         }
     } else {
-        echo "Sorry for inconvience, please try again later.";
+        echo "Connection Time Out, please try again.";
     }
 
     $conn->close();
