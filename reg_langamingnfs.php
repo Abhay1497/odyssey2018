@@ -51,7 +51,7 @@ include 'connection.php';
             //sending email
             $email_subject = "ODYSSEY Registration";
             $email_body = "Thank you for registering in LAN Gaming(NFS).\nYour Participation ID is ".$event_id;
-//            mail($email, $email_subject, $email_body);
+            include 'email.php';
 
             //sending sms
             include('way2sms-api.php');

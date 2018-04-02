@@ -62,10 +62,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (mysqli_query($conn, $sql) == 1) {
 
             //sending email
-            $email_subject = "ODYSSEY Registration";
             $email_body = "Thank you for registering in Mad Race.\nYour Participation ID is ".$event_id;
-//            mail($email1, $email_subject, $email_body);
-//            mail($email2, $email_subject, $email_body);
+            include 'email.php';
 
             //sending sms
             include('way2sms-api.php');
