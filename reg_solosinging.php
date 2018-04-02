@@ -5,21 +5,21 @@
  * Date: 23-03-2018
  * Time: 06:00 PM
  */
-$name = $email = $mobile = $college = "";
+$name1 = $email1 = $mobile1 = $college = "";
 $event_id = "ODCLSS-";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if (!empty($_POST['name'])) {
-        $name = $_POST['name'];
+        $name1 = $_POST['name'];
     }
 
     if (!empty($_POST['email'])) {
-        $email = $_POST['email'];
+        $email1 = $_POST['email'];
     }
 
     if (!empty($_POST['mobile'])) {
-        $mobile = $_POST['mobile'];
+        $mobile1 = $_POST['mobile'];
     }
 
     if (!empty($_POST['college'])) {
@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $event_id=$event_id.$id;
 
-        $sql = "insert into solosinging values('$name','$mobile','$email','$college','$id')";
+        $sql = "insert into solosinging values('$name1','$mobile1','$email1','$college','$id')";
         if (mysqli_query($conn, $sql) == 1) {
 
 //            //sending email
@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             //sending sms
             include('way2sms-api.php');
-            sendWay2SMS ( "8197508688","R3694K",$mobile,$email_body);
+            sendWay2SMS ( "8197508688","R3694K",$mobile1,$email_body);
 
             ?>
             <script language="javascript" type="text/javascript">

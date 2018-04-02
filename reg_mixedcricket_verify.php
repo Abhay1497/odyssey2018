@@ -33,6 +33,9 @@ if ($conn) {
             <div class="row">
                 <h1>Mixed Cricket Registration</h1>
             </div>
+            <div class="row" align="center">
+                <h4 style="color: red; margin: 0 auto" >Remaining Registration: <?php echo 65-$id ?></h4>
+            </div>
             <form action="reg_mixedcricket.php" method="post">
                 <div class="row">
                     <div class="zoom">

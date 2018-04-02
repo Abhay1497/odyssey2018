@@ -6,21 +6,21 @@
  * Time: 03:55 PM
  */
 
-$name = $email = $mobile = $college = "";
+$name1 = $email1 = $mobile1 = $college = "";
 $event_id = "ODCS022-";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if (!empty($_POST['name'])) {
-        $name = $_POST['name'];
+        $name1 = $_POST['name'];
     }
 
     if (!empty($_POST['email'])) {
-        $email = $_POST['email'];
+        $email1 = $_POST['email'];
     }
 
     if (!empty($_POST['mobile'])) {
-        $mobile = $_POST['mobile'];
+        $mobile1 = $_POST['mobile'];
     }
 
     if (!empty($_POST['college'])) {
@@ -45,7 +45,7 @@ include 'connection.php';
 
         }
         $event_id=$event_id.$id;
-        $sql = "insert into langamingnfs values('$name','$mobile','$email','$college','$id')";
+        $sql = "insert into langamingnfs values('$name1','$mobile1','$email1','$college','$id')";
         if (mysqli_query($conn, $sql) == 1) {
 
             //sending email
@@ -55,7 +55,7 @@ include 'connection.php';
 
             //sending sms
             include('way2sms-api.php');
-            sendWay2SMS ( "8197508688","R3694K",$mobile,$email_body);
+            sendWay2SMS ( "8197508688","R3694K",$mobile1,$email_body);
 
             ?>
             <script language="javascript" type="text/javascript">
