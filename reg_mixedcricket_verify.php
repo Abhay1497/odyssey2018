@@ -28,6 +28,7 @@ if ($conn) {
         </head>
         <body>
         <a href="http://jainbgm.in/odyssey18"><button class="btn btn-primary" style="top: 10px;left: 50px;position: absolute;height: 50px;width: 100px;"><b>Home</b></button></a>
+        <br><br>
         <div class="container">
             <div class="row">
                 <h1>Mixed Cricket Registration</h1>
