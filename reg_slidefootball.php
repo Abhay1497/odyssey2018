@@ -87,8 +87,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (mysqli_query($conn, $sql) == 1) {
 
             //sending email
-//            $email_subject = "ODYSSEY Registration";
-//            $email_body = "Thank you for registering in Slide-Football.\nYour Participation ID is " . $event_id;
+            $email_subject = "ODYSSEY Registration";
+            $email_body = "Thank you for registering in Slide-Football.\nYour Participation ID is " . $event_id;
 //            mail($email1, $email_subject, $email_body);
 //            mail($email2, $email_subject, $email_body);
 //            mail($email3, $email_subject, $email_body);
@@ -97,25 +97,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
             //sending sms
-//            include('way2sms-api.php');
-//            sendWay2SMS("8197508688", "R3694K", $mobile1, $email_body);
-//            sendWay2SMS("8197508688", "R3694K", $mobile2, $email_body);
-//            sendWay2SMS("8197508688", "R3694K", $mobile3, $email_body);
-//            sendWay2SMS("8197508688", "R3694K", $mobile4, $email_body);
-//            sendWay2SMS("8197508688", "R3694K", $mobile5, $email_body);
+            include('way2sms-api.php');
+            sendWay2SMS("8197508688", "R3694K", $mobile1, $email_body);
+            sendWay2SMS("8197508688", "R3694K", $mobile2, $email_body);
+            sendWay2SMS("8197508688", "R3694K", $mobile3, $email_body);
+            sendWay2SMS("8197508688", "R3694K", $mobile4, $email_body);
+            sendWay2SMS("8197508688", "R3694K", $mobile5, $email_body);
 
 
             ?>
             <script language="javascript" type="text/javascript">
                 alert('Registered successfully.Your ID is <?php echo $event_id;?>');
-                window.location = "jainbgm.in/odyssey18";
+                window.location = "http://jainbgm.in/odyssey18";
             </script>
             <?php
         } else {
             ?>
             <script language="javascript" type="text/javascript">
                 alert('You have already registered for this event.');
-                window.location = "jainbgm.in/odyssey18";
+                window.location = "http://jainbgm.in/odyssey18";
             </script>
         <?php        }
     } else {
