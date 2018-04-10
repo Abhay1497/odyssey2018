@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (mysqli_query($conn, $sql) == 1) {
 
             //sending email
-            $email_body = "Thank you for registering in Mad Race.\nYour Participation ID is ".$event_id;
+            $email_body = "Thank you for registering in Codezilla.\nYour Participation ID is ".$event_id;
             include 'email.php';
 
             //sending sms

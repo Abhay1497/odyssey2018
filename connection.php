@@ -6,5 +6,5 @@
  * Time: 10:55 AM
  */
 
-$conn = mysqli_connect("localhost", "root", "", "odyssey2k18");
+$conn = mysqli_connect("localhost", "root", "", "odyssey");
 ?>

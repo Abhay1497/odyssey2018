@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 //            //sending email
             $email_subject = "ODYSSEY Registration";
-            $email_body = "Thank you for registering in Group Dance.\nYour Participation ID is ".$event_id;
+            $email_body = "Thank you for registering in Unplugged Band.\nYour Participation ID is ".$event_id;
             include 'email.php';
 
             //sending sms
